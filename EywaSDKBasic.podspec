@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'EywaSDKBasic'
-  s.version          = '0.1.0'
+  s.version          = '0.1.2'
   s.summary          = 'Eywa SDK.'
  
   s.description      = <<-DESC
@@ -15,6 +15,6 @@ Eywa SDK Basic
  
   s.ios.deployment_target = '10.0'
 	s.swift_version = '4.0'
-  s.source_files = 'EywaSDK/*.{swift,h}', 'EywaSDK/Reachability/*.swift'
+  s.source_files = 'EywaSDK/*.{swift,h, json}', 'EywaSDK/Reachability/*.swift'
  
 end
