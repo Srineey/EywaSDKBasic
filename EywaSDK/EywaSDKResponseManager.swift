@@ -38,7 +38,7 @@ class EywaSDKResponseManager {
             
             if let data = data {
                 do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
+                    let _ = try JSONSerialization.jsonObject(with: data, options: [])
 //                    print(json)
                     completionHandler(data, false)
                 }catch {
