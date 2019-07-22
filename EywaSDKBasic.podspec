@@ -16,5 +16,7 @@ Eywa SDK Basic
   s.ios.deployment_target = '10.0'
 	s.swift_version = '4.0'
   s.source_files = 'EywaSDK/*.{swift,h,json,plist}', 'EywaSDK/Reachability/*.swift'
+s.resources = "EywaSDK/Assets/*.json"
+
  
 end
