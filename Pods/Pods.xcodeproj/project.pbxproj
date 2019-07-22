@@ -3,27 +3,36 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0139B46F9834478084D8341AC1702D22 /* EywaSDKBasic-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C677EF3EFD85ACBC26D156AA65ADD5C3 /* EywaSDKBasic-dummy.m */; };
-		268E7942939CDE03FE9213DFDDF94409 /* EywaSDKResponseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D806DA4020D26CD93FAB13E899190 /* EywaSDKResponseManager.swift */; };
+		0210B8DD923C0A53E1AA250554F8EB8A /* EywaSDKNetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B6596F5ECF57FEC7457DBA2592E082 /* EywaSDKNetworkReachability.swift */; };
+		03E8B681976CF84765212C856CAF1300 /* EywaSDKCodeDeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73D2C04AC995CAB29C60C801AB28674 /* EywaSDKCodeDeviceHelper.swift */; };
+		2659F4017EBCD43530B492D1335D1DD4 /* WiFiMacList.json in Resources */ = {isa = PBXBuildFile; fileRef = 3AAB467F72D6521F8056707CF84879C0 /* WiFiMacList.json */; };
 		2ED14D747B84676A209892DC68B8F88C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		35CF4D87738A0EE2950B451584A033E1 /* EywaSDKNetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279D6D03B11C1E8A241A6E7C1A54ACD5 /* EywaSDKNetworkReachability.swift */; };
-		3DEFA109DC035FCF2D1ED8270A9316FE /* EywaSDKCodeDeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2EBFCC74B0AAE032EECA8E84F61B07 /* EywaSDKCodeDeviceHelper.swift */; };
+		3100E76490D7BEAA00B87D67DCBAB1E3 /* EywaSDKCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C7DF1BE5611917DE13AF4A611584C /* EywaSDKCodeManager.swift */; };
+		32C6E3D1E8261F5E17B5E8666CB96F95 /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A8E33714C5E42CC4CF99A96AF7B987 /* LocationData.swift */; };
+		40DB7E505C52D406C323196FCF723960 /* EywaSDKBasic-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9151AE6C2A9488E322677317C1208C31 /* EywaSDKBasic-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4EEE68BC649972EB02A06CDB138BF38C /* Pods-PodSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 28DEBC2571BFB32A13DB59CCE6609B59 /* Pods-PodSDK-dummy.m */; };
-		5FB7F3DCFA0D81178EFCF80F019C2757 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		94A5F48503F5892E850D93346B05991D /* LocationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5388C86D191DB94C4C094774E06B6276 /* LocationData.swift */; };
-		B2789F44E9A2CED8F8531676264A085E /* EywaSDKBasic-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 391EF28A73F5EEB12ACF8E86DB0BC821 /* EywaSDKBasic-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BB5A395E307DA84864B7D8E86E3E333F /* EywaSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 241A88F1D2DFFD7C2A240A99CFE3662A /* EywaSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		513C2D7D0C3EDAAFB154F780330A2843 /* EywaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1FBF285D2A8EEF18C73AE449A5269D /* EywaConstants.swift */; };
+		70B14B06E80C2049109BB8B01CD0F008 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		787595427C4B96DE3E77976D53AF626C /* EywaSDKResponseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E649094DCA176FD98B7B134404A54C30 /* EywaSDKResponseManager.swift */; };
+		88423C8A8AF8B520D864CF21B9E60F8F /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2194C8B7EFAB398A9D31F0BF51EE8AD2 /* Reachability.swift */; };
+		BF641F2DB10D4B13BD993E0BA58E4BDE /* EywaSDKBasic.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1C7FA4A507158FC65A632F4F826757DC /* EywaSDKBasic.bundle */; };
 		D16B8F8ABD2B476315029F527A05C8FB /* Pods-PodSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F12028E5DBA5012E2B4B7B3BE6812C3 /* Pods-PodSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E77CA79F09C99C6CAA841FC6095F2BF9 /* EywaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6596694742498B27A476F61229BF9A91 /* EywaConstants.swift */; };
-		FDD0E5C383C7B496E91B6EEA1F7F7672 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8DC13AC9E79FB18BBDCC6D48096867 /* Reachability.swift */; };
-		FE4D73D7ABC1A12334171B3838858061 /* EywaSDKCodeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450226369FBFC3C4A0C4714D24C47933 /* EywaSDKCodeManager.swift */; };
+		E83902C1349470A736BFB921DDB77F66 /* EywaSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = C69E7FC9B28743962145EBA8B758CF4E /* EywaSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8900666D3C142F648CA63881EF95178 /* EywaSDKBasic-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 98C897B5A9E0E0999A1A9108B154C090 /* EywaSDKBasic-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5A2A065D7A0C1352D696E4810C750AB3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E99DBC40B1CAE06370BF03F1C01B5E55;
+			remoteInfo = "EywaSDKBasic-EywaSDKBasic";
+		};
 		67665B2D08575475399303B7501B3E41 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -35,32 +44,35 @@
 
 /* Begin PBXFileReference section */
 		0290AFDE11CDAE1C141791CD9D10FCD0 /* Pods-PodSDK-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PodSDK-acknowledgements.plist"; sourceTree = "<group>"; };
-		1E480ED264BF10271A00125103AD9A83 /* EywaSDKBasic.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EywaSDKBasic.xcconfig; sourceTree = "<group>"; };
+		1C7FA4A507158FC65A632F4F826757DC /* EywaSDKBasic.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = EywaSDKBasic.bundle; path = "EywaSDKBasic-EywaSDKBasic.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F12028E5DBA5012E2B4B7B3BE6812C3 /* Pods-PodSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PodSDK-umbrella.h"; sourceTree = "<group>"; };
-		241A88F1D2DFFD7C2A240A99CFE3662A /* EywaSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EywaSDK.h; path = EywaSDK/EywaSDK.h; sourceTree = "<group>"; };
+		2194C8B7EFAB398A9D31F0BF51EE8AD2 /* Reachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = EywaSDK/Reachability/Reachability.swift; sourceTree = "<group>"; };
 		26C61EB5C4CDA7C4B1ECE2035957124E /* Pods-PodSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PodSDK.release.xcconfig"; sourceTree = "<group>"; };
-		26E8DFD77B82C6260E137034525A9F00 /* EywaSDKBasic-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "EywaSDKBasic-Info.plist"; sourceTree = "<group>"; };
 		279444B62CCE215344F72A6363009E44 /* Pods-PodSDK-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PodSDK-acknowledgements.markdown"; sourceTree = "<group>"; };
-		279D6D03B11C1E8A241A6E7C1A54ACD5 /* EywaSDKNetworkReachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EywaSDKNetworkReachability.swift; path = EywaSDK/EywaSDKNetworkReachability.swift; sourceTree = "<group>"; };
 		28DEBC2571BFB32A13DB59CCE6609B59 /* Pods-PodSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PodSDK-dummy.m"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		391EF28A73F5EEB12ACF8E86DB0BC821 /* EywaSDKBasic-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EywaSDKBasic-umbrella.h"; sourceTree = "<group>"; };
-		450226369FBFC3C4A0C4714D24C47933 /* EywaSDKCodeManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EywaSDKCodeManager.swift; path = EywaSDK/EywaSDKCodeManager.swift; sourceTree = "<group>"; };
-		5388C86D191DB94C4C094774E06B6276 /* LocationData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationData.swift; path = EywaSDK/LocationData.swift; sourceTree = "<group>"; };
-		5E2EBFCC74B0AAE032EECA8E84F61B07 /* EywaSDKCodeDeviceHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EywaSDKCodeDeviceHelper.swift; path = EywaSDK/EywaSDKCodeDeviceHelper.swift; sourceTree = "<group>"; };
-		6596694742498B27A476F61229BF9A91 /* EywaConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EywaConstants.swift; path = EywaSDK/EywaConstants.swift; sourceTree = "<group>"; };
+		3AAB467F72D6521F8056707CF84879C0 /* WiFiMacList.json */ = {isa = PBXFileReference; includeInIndex = 1; name = WiFiMacList.json; path = EywaSDK/Assets/WiFiMacList.json; sourceTree = "<group>"; };
+		50B6596F5ECF57FEC7457DBA2592E082 /* EywaSDKNetworkReachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EywaSDKNetworkReachability.swift; path = EywaSDK/EywaSDKNetworkReachability.swift; sourceTree = "<group>"; };
 		6C9C10082B98B7E6F5791093975085CA /* Pods-PodSDK-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PodSDK-frameworks.sh"; sourceTree = "<group>"; };
 		6FACB5A63CDF596A8A75B8556DE131E3 /* Pods-PodSDK-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PodSDK-Info.plist"; sourceTree = "<group>"; };
 		7DCF0E1C6030A853EF6952E7B6AF39EE /* EywaSDKBasic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EywaSDKBasic.framework; path = EywaSDKBasic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		805E0496CED0B7272A8C659018F2944A /* EywaSDKBasic-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EywaSDKBasic-prefix.pch"; sourceTree = "<group>"; };
+		83A8E33714C5E42CC4CF99A96AF7B987 /* LocationData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationData.swift; path = EywaSDK/LocationData.swift; sourceTree = "<group>"; };
+		9151AE6C2A9488E322677317C1208C31 /* EywaSDKBasic-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EywaSDKBasic-umbrella.h"; sourceTree = "<group>"; };
 		9729F911FFC80FB3CFF0A2CF30EA7A44 /* Pods-PodSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PodSDK.debug.xcconfig"; sourceTree = "<group>"; };
+		98C897B5A9E0E0999A1A9108B154C090 /* EywaSDKBasic-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EywaSDKBasic-dummy.m"; sourceTree = "<group>"; };
+		9B1FBF285D2A8EEF18C73AE449A5269D /* EywaConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EywaConstants.swift; path = EywaSDK/EywaConstants.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A857DEEED05C9D08F0B0F0113BD04561 /* EywaSDKBasic.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = EywaSDKBasic.modulemap; sourceTree = "<group>"; };
-		B8329F421419479DEBE804F6FAEA6E8B /* EywaSDKBasic-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EywaSDKBasic-prefix.pch"; sourceTree = "<group>"; };
+		AF042FD2FC337A7DA6A37DDBDECFD58B /* EywaSDKBasic.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = EywaSDKBasic.modulemap; sourceTree = "<group>"; };
+		B73D2C04AC995CAB29C60C801AB28674 /* EywaSDKCodeDeviceHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EywaSDKCodeDeviceHelper.swift; path = EywaSDK/EywaSDKCodeDeviceHelper.swift; sourceTree = "<group>"; };
 		B975632850E32572421EB3A404C4294A /* Pods-PodSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-PodSDK.modulemap"; sourceTree = "<group>"; };
-		C677EF3EFD85ACBC26D156AA65ADD5C3 /* EywaSDKBasic-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EywaSDKBasic-dummy.m"; sourceTree = "<group>"; };
+		C12CCC398D31AA00DCEAE0C3D39C0655 /* EywaSDKBasic.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EywaSDKBasic.xcconfig; sourceTree = "<group>"; };
+		C69E7FC9B28743962145EBA8B758CF4E /* EywaSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = EywaSDK.h; path = EywaSDK/EywaSDK.h; sourceTree = "<group>"; };
+		D36CBE4742D0AD956399FBA2F28C9C67 /* EywaSDKBasic-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "EywaSDKBasic-Info.plist"; sourceTree = "<group>"; };
+		DE2C7DF1BE5611917DE13AF4A611584C /* EywaSDKCodeManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EywaSDKCodeManager.swift; path = EywaSDK/EywaSDKCodeManager.swift; sourceTree = "<group>"; };
 		E0572BF8F35878FC45516C09FEF184DA /* Pods_PodSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PodSDK.framework; path = "Pods-PodSDK.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA9D806DA4020D26CD93FAB13E899190 /* EywaSDKResponseManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EywaSDKResponseManager.swift; path = EywaSDK/EywaSDKResponseManager.swift; sourceTree = "<group>"; };
-		FB8DC13AC9E79FB18BBDCC6D48096867 /* Reachability.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = EywaSDK/Reachability/Reachability.swift; sourceTree = "<group>"; };
+		E10A2DE26A97EEB799E01133F0AA3A7D /* ResourceBundle-EywaSDKBasic-EywaSDKBasic-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-EywaSDKBasic-EywaSDKBasic-Info.plist"; sourceTree = "<group>"; };
+		E649094DCA176FD98B7B134404A54C30 /* EywaSDKResponseManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EywaSDKResponseManager.swift; path = EywaSDK/EywaSDKResponseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,29 +84,73 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CFA9F11427990D0985F3FD42C504B78C /* Frameworks */ = {
+		EC28619A4BF292B93D5DFBE97378BD21 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FB7F3DCFA0D81178EFCF80F019C2757 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAA93AF6D392923C9377370BDC6259AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70B14B06E80C2049109BB8B01CD0F008 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0DDD55B2B1E65EE529AECEC3831F9349 /* Support Files */ = {
+		10426D11CF81A97BED5E64185BB74E82 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A857DEEED05C9D08F0B0F0113BD04561 /* EywaSDKBasic.modulemap */,
-				1E480ED264BF10271A00125103AD9A83 /* EywaSDKBasic.xcconfig */,
-				C677EF3EFD85ACBC26D156AA65ADD5C3 /* EywaSDKBasic-dummy.m */,
-				26E8DFD77B82C6260E137034525A9F00 /* EywaSDKBasic-Info.plist */,
-				B8329F421419479DEBE804F6FAEA6E8B /* EywaSDKBasic-prefix.pch */,
-				391EF28A73F5EEB12ACF8E86DB0BC821 /* EywaSDKBasic-umbrella.h */,
+				1C7FA4A507158FC65A632F4F826757DC /* EywaSDKBasic.bundle */,
+				7DCF0E1C6030A853EF6952E7B6AF39EE /* EywaSDKBasic.framework */,
+				E0572BF8F35878FC45516C09FEF184DA /* Pods_PodSDK.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		219435A9EDA793C076FA9DEA8269F8AD /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF042FD2FC337A7DA6A37DDBDECFD58B /* EywaSDKBasic.modulemap */,
+				C12CCC398D31AA00DCEAE0C3D39C0655 /* EywaSDKBasic.xcconfig */,
+				98C897B5A9E0E0999A1A9108B154C090 /* EywaSDKBasic-dummy.m */,
+				D36CBE4742D0AD956399FBA2F28C9C67 /* EywaSDKBasic-Info.plist */,
+				805E0496CED0B7272A8C659018F2944A /* EywaSDKBasic-prefix.pch */,
+				9151AE6C2A9488E322677317C1208C31 /* EywaSDKBasic-umbrella.h */,
+				E10A2DE26A97EEB799E01133F0AA3A7D /* ResourceBundle-EywaSDKBasic-EywaSDKBasic-Info.plist */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/EywaSDKBasic";
+			sourceTree = "<group>";
+		};
+		38893F6ADF0033BE322A1305A1BE7DF3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3AAB467F72D6521F8056707CF84879C0 /* WiFiMacList.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3C641418D70ECD5EBCD2D1B80270FCF2 /* EywaSDKBasic */ = {
+			isa = PBXGroup;
+			children = (
+				9B1FBF285D2A8EEF18C73AE449A5269D /* EywaConstants.swift */,
+				C69E7FC9B28743962145EBA8B758CF4E /* EywaSDK.h */,
+				B73D2C04AC995CAB29C60C801AB28674 /* EywaSDKCodeDeviceHelper.swift */,
+				DE2C7DF1BE5611917DE13AF4A611584C /* EywaSDKCodeManager.swift */,
+				50B6596F5ECF57FEC7457DBA2592E082 /* EywaSDKNetworkReachability.swift */,
+				E649094DCA176FD98B7B134404A54C30 /* EywaSDKResponseManager.swift */,
+				83A8E33714C5E42CC4CF99A96AF7B987 /* LocationData.swift */,
+				2194C8B7EFAB398A9D31F0BF51EE8AD2 /* Reachability.swift */,
+				38893F6ADF0033BE322A1305A1BE7DF3 /* Resources */,
+				219435A9EDA793C076FA9DEA8269F8AD /* Support Files */,
+			);
+			name = EywaSDKBasic;
+			path = EywaSDKBasic;
 			sourceTree = "<group>";
 		};
 		4464558C5691EC536B441DCA1BB7E630 /* Pods-PodSDK */ = {
@@ -114,6 +170,14 @@
 			path = "Target Support Files/Pods-PodSDK";
 			sourceTree = "<group>";
 		};
+		47495D366C3E14933A7F2BB5134A5EC2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3C641418D70ECD5EBCD2D1B80270FCF2 /* EywaSDKBasic */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		BAC1BC53090D4927579C5099C5D2E124 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,21 +194,13 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		C0DDBE0778B8A3399B6A10908CED854C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				EB2F6111B8C88FD72868877B57BA68AF /* EywaSDKBasic */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				C0DDBE0778B8A3399B6A10908CED854C /* Pods */,
-				DF981D62B98C8D140CEE3D924318B57C /* Products */,
+				47495D366C3E14933A7F2BB5134A5EC2 /* Pods */,
+				10426D11CF81A97BED5E64185BB74E82 /* Products */,
 				BAC1BC53090D4927579C5099C5D2E124 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -155,32 +211,6 @@
 				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DF981D62B98C8D140CEE3D924318B57C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				7DCF0E1C6030A853EF6952E7B6AF39EE /* EywaSDKBasic.framework */,
-				E0572BF8F35878FC45516C09FEF184DA /* Pods_PodSDK.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		EB2F6111B8C88FD72868877B57BA68AF /* EywaSDKBasic */ = {
-			isa = PBXGroup;
-			children = (
-				6596694742498B27A476F61229BF9A91 /* EywaConstants.swift */,
-				241A88F1D2DFFD7C2A240A99CFE3662A /* EywaSDK.h */,
-				5E2EBFCC74B0AAE032EECA8E84F61B07 /* EywaSDKCodeDeviceHelper.swift */,
-				450226369FBFC3C4A0C4714D24C47933 /* EywaSDKCodeManager.swift */,
-				279D6D03B11C1E8A241A6E7C1A54ACD5 /* EywaSDKNetworkReachability.swift */,
-				FA9D806DA4020D26CD93FAB13E899190 /* EywaSDKResponseManager.swift */,
-				5388C86D191DB94C4C094774E06B6276 /* LocationData.swift */,
-				FB8DC13AC9E79FB18BBDCC6D48096867 /* Reachability.swift */,
-				0DDD55B2B1E65EE529AECEC3831F9349 /* Support Files */,
-			);
-			name = EywaSDKBasic;
-			path = EywaSDKBasic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,12 +224,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DF191D4824072542908299063E831299 /* Headers */ = {
+		A97EED8007C462AFDB2CFFCA5FA23E8D /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB5A395E307DA84864B7D8E86E3E333F /* EywaSDK.h in Headers */,
-				B2789F44E9A2CED8F8531676264A085E /* EywaSDKBasic-umbrella.h in Headers */,
+				E83902C1349470A736BFB921DDB77F66 /* EywaSDK.h in Headers */,
+				40DB7E505C52D406C323196FCF723960 /* EywaSDKBasic-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,21 +257,39 @@
 		};
 		D8A9FE00180A0B164DC8DD96D430E254 /* EywaSDKBasic */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DA8A896B40BC4AE5B0326D7E15661709 /* Build configuration list for PBXNativeTarget "EywaSDKBasic" */;
+			buildConfigurationList = A28BBA3E298724FE3031EDF6730D00D8 /* Build configuration list for PBXNativeTarget "EywaSDKBasic" */;
 			buildPhases = (
-				DF191D4824072542908299063E831299 /* Headers */,
-				0336777EEE5D1269485E063D124365FE /* Sources */,
-				CFA9F11427990D0985F3FD42C504B78C /* Frameworks */,
-				7A6EE346913087CC2817C46F9F2101F3 /* Resources */,
+				A97EED8007C462AFDB2CFFCA5FA23E8D /* Headers */,
+				31A91AF2C1649F7EC746F753D0C3F056 /* Sources */,
+				FAA93AF6D392923C9377370BDC6259AD /* Frameworks */,
+				5E6A86E07B0B1FD6A4752723A8D1E665 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7475B2229F8D5AE03CC3151FF74B5D9E /* PBXTargetDependency */,
 			);
 			name = EywaSDKBasic;
 			productName = EywaSDKBasic;
 			productReference = 7DCF0E1C6030A853EF6952E7B6AF39EE /* EywaSDKBasic.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		E99DBC40B1CAE06370BF03F1C01B5E55 /* EywaSDKBasic-EywaSDKBasic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0C64B827946CEF42566DD0588EDF3B52 /* Build configuration list for PBXNativeTarget "EywaSDKBasic-EywaSDKBasic" */;
+			buildPhases = (
+				B7E4BD36BFD2F2D61F0479DEA6A48F6C /* Sources */,
+				EC28619A4BF292B93D5DFBE97378BD21 /* Frameworks */,
+				61E3BEA32927FADD5BF1515A7732554D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "EywaSDKBasic-EywaSDKBasic";
+			productName = "EywaSDKBasic-EywaSDKBasic";
+			productReference = 1C7FA4A507158FC65A632F4F826757DC /* EywaSDKBasic.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -253,18 +301,19 @@
 				LastUpgradeCheck = 1100;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = DF981D62B98C8D140CEE3D924318B57C /* Products */;
+			productRefGroup = 10426D11CF81A97BED5E64185BB74E82 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				D8A9FE00180A0B164DC8DD96D430E254 /* EywaSDKBasic */,
+				E99DBC40B1CAE06370BF03F1C01B5E55 /* EywaSDKBasic-EywaSDKBasic */,
 				B7B82C124C9B60267D9379B683BC16F3 /* Pods-PodSDK */,
 			);
 		};
@@ -278,28 +327,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7A6EE346913087CC2817C46F9F2101F3 /* Resources */ = {
+		5E6A86E07B0B1FD6A4752723A8D1E665 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF641F2DB10D4B13BD993E0BA58E4BDE /* EywaSDKBasic.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		61E3BEA32927FADD5BF1515A7732554D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2659F4017EBCD43530B492D1335D1DD4 /* WiFiMacList.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0336777EEE5D1269485E063D124365FE /* Sources */ = {
+		31A91AF2C1649F7EC746F753D0C3F056 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E77CA79F09C99C6CAA841FC6095F2BF9 /* EywaConstants.swift in Sources */,
-				0139B46F9834478084D8341AC1702D22 /* EywaSDKBasic-dummy.m in Sources */,
-				3DEFA109DC035FCF2D1ED8270A9316FE /* EywaSDKCodeDeviceHelper.swift in Sources */,
-				FE4D73D7ABC1A12334171B3838858061 /* EywaSDKCodeManager.swift in Sources */,
-				35CF4D87738A0EE2950B451584A033E1 /* EywaSDKNetworkReachability.swift in Sources */,
-				268E7942939CDE03FE9213DFDDF94409 /* EywaSDKResponseManager.swift in Sources */,
-				94A5F48503F5892E850D93346B05991D /* LocationData.swift in Sources */,
-				FDD0E5C383C7B496E91B6EEA1F7F7672 /* Reachability.swift in Sources */,
+				513C2D7D0C3EDAAFB154F780330A2843 /* EywaConstants.swift in Sources */,
+				F8900666D3C142F648CA63881EF95178 /* EywaSDKBasic-dummy.m in Sources */,
+				03E8B681976CF84765212C856CAF1300 /* EywaSDKCodeDeviceHelper.swift in Sources */,
+				3100E76490D7BEAA00B87D67DCBAB1E3 /* EywaSDKCodeManager.swift in Sources */,
+				0210B8DD923C0A53E1AA250554F8EB8A /* EywaSDKNetworkReachability.swift in Sources */,
+				787595427C4B96DE3E77976D53AF626C /* EywaSDKResponseManager.swift in Sources */,
+				32C6E3D1E8261F5E17B5E8666CB96F95 /* LocationData.swift in Sources */,
+				88423C8A8AF8B520D864CF21B9E60F8F /* Reachability.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,9 +369,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B7E4BD36BFD2F2D61F0479DEA6A48F6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7475B2229F8D5AE03CC3151FF74B5D9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "EywaSDKBasic-EywaSDKBasic";
+			target = E99DBC40B1CAE06370BF03F1C01B5E55 /* EywaSDKBasic-EywaSDKBasic */;
+			targetProxy = 5A2A065D7A0C1352D696E4810C750AB3 /* PBXContainerItemProxy */;
+		};
 		9352F8BCDE77B6DB839C9E7B183B086D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = EywaSDKBasic;
@@ -323,6 +394,42 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		09812FCF4C20FA4D230EAA16337335DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C12CCC398D31AA00DCEAE0C3D39C0655 /* EywaSDKBasic.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/EywaSDKBasic/EywaSDKBasic-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EywaSDKBasic/EywaSDKBasic-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/EywaSDKBasic/EywaSDKBasic.modulemap";
+				PRODUCT_MODULE_NAME = EywaSDKBasic;
+				PRODUCT_NAME = EywaSDKBasic;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		204B8AEA4AE90A551A1768B355C2F9F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -485,6 +592,59 @@
 			};
 			name = Release;
 		};
+		4531F6A4B8A0F1720342BFF2028E7EB5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C12CCC398D31AA00DCEAE0C3D39C0655 /* EywaSDKBasic.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/EywaSDKBasic";
+				INFOPLIST_FILE = "Target Support Files/EywaSDKBasic/ResourceBundle-EywaSDKBasic-EywaSDKBasic-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_NAME = EywaSDKBasic;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		98B5D0C663466130B1743ABA18E574DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C12CCC398D31AA00DCEAE0C3D39C0655 /* EywaSDKBasic.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/EywaSDKBasic/EywaSDKBasic-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EywaSDKBasic/EywaSDKBasic-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/EywaSDKBasic/EywaSDKBasic.modulemap";
+				PRODUCT_MODULE_NAME = EywaSDKBasic;
+				PRODUCT_NAME = EywaSDKBasic;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		9D867BDA8E5C4454405CD1C969714A39 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 26C61EB5C4CDA7C4B1ECE2035957124E /* Pods-PodSDK.release.xcconfig */;
@@ -524,82 +684,34 @@
 			};
 			name = Release;
 		};
-		BFA8E97B59DBDEF3DC288E1E7F52B505 /* Debug */ = {
+		C59EED95DC215BABD684F3F9F3F36DDF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E480ED264BF10271A00125103AD9A83 /* EywaSDKBasic.xcconfig */;
+			baseConfigurationReference = C12CCC398D31AA00DCEAE0C3D39C0655 /* EywaSDKBasic.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/EywaSDKBasic/EywaSDKBasic-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/EywaSDKBasic/EywaSDKBasic-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/EywaSDKBasic";
+				INFOPLIST_FILE = "Target Support Files/EywaSDKBasic/ResourceBundle-EywaSDKBasic-EywaSDKBasic-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/EywaSDKBasic/EywaSDKBasic.modulemap";
-				PRODUCT_MODULE_NAME = EywaSDKBasic;
 				PRODUCT_NAME = EywaSDKBasic;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
-		};
-		C08BD8CAA5608E83A8F967AD4004FE47 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1E480ED264BF10271A00125103AD9A83 /* EywaSDKBasic.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/EywaSDKBasic/EywaSDKBasic-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/EywaSDKBasic/EywaSDKBasic-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/EywaSDKBasic/EywaSDKBasic.modulemap";
-				PRODUCT_MODULE_NAME = EywaSDKBasic;
-				PRODUCT_NAME = EywaSDKBasic;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0C64B827946CEF42566DD0588EDF3B52 /* Build configuration list for PBXNativeTarget "EywaSDKBasic-EywaSDKBasic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C59EED95DC215BABD684F3F9F3F36DDF /* Debug */,
+				4531F6A4B8A0F1720342BFF2028E7EB5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -618,11 +730,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DA8A896B40BC4AE5B0326D7E15661709 /* Build configuration list for PBXNativeTarget "EywaSDKBasic" */ = {
+		A28BBA3E298724FE3031EDF6730D00D8 /* Build configuration list for PBXNativeTarget "EywaSDKBasic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BFA8E97B59DBDEF3DC288E1E7F52B505 /* Debug */,
-				C08BD8CAA5608E83A8F967AD4004FE47 /* Release */,
+				09812FCF4C20FA4D230EAA16337335DB /* Debug */,
+				98B5D0C663466130B1743ABA18E574DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

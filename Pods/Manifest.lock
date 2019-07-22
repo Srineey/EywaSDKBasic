@@ -1,5 +1,5 @@
 PODS:
-  - EywaSDKBasic (0.1.1)
+  - EywaSDKBasic (0.1.8)
 
 DEPENDENCIES:
   - EywaSDKBasic
@@ -9,7 +9,7 @@ SPEC REPOS:
     - EywaSDKBasic
 
 SPEC CHECKSUMS:
-  EywaSDKBasic: 4691576df9fe58275f4fc294a13f0692ec077c0c
+  EywaSDKBasic: 11fa5eef604e1f1368e84741b24923fdc72c8eb2
 
 PODFILE CHECKSUM: 6aa90167f05e67920b1c1006f79dcca4d169eb7b
 
