@@ -1,0 +1,6 @@
+framework module EywaSDKBasic {
+  umbrella header "EywaSDKBasic-umbrella.h"
+
+  export *
+  module * { export * }
+}

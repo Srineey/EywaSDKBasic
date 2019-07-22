@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EywaSDKBasic
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let SDKMgr = EywaSDKCodeManager.SharedManager
+        SDKMgr.kLicenseKey = "IOS_TEST"
+        SDKMgr.licenseKeyCheck()
+        let networkMgr : EywaSDKNetworkReachability = EywaSDKNetworkReachability.sharedInstance
+        networkMgr.delegate = self
         return true
     }
 
@@ -42,5 +49,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension AppDelegate : EywaSDKNetworkReachabilityDelegate {
+    
+    func didConnectedToWifi(routerName: String) {
+        
+        //code your logic here
+        
+        print("RouterName is \(routerName)")
+    }
 }
 
