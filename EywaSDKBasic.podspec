@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'EywaSDKBasic'
-  s.version          = '0.1.7'
+  s.version          = '0.1.8'
   s.summary          = 'Eywa SDK.'
  
   s.description      = <<-DESC
@@ -15,9 +15,9 @@ Eywa SDK Basic
  
   s.ios.deployment_target = '10.0'
 	s.swift_version = '4.0'
-  s.source_files = 'EywaSDK/*.{swift,h}', 'EywaSDK/Reachability/*.swift'
+  s.source_files = 'EywaSDK/*.{swift,h,json,plist}', 'EywaSDK/Reachability/*.swift'
 s.resource_bundles = {
-    'EywaSDKBasic' => ['EywaSDK/Assets/*.{json,plist}']
+    'EywaSDKBasic' => ['EywaSDK/Assets/*.json']
   }
 
  
