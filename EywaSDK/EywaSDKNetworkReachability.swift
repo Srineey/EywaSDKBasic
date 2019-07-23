@@ -62,7 +62,7 @@ public class EywaSDKNetworkReachability: NSObject {
         let networkMac = deviceHelper.fetchBSSIDInfo()
         
         print("Network Name is \(networkName)")
-        print("Network MAC Well is \(networkMac)")
+        print("Network MAC Well Changed to is \(networkMac)")
         
         let bun = Bundle(identifier: "org.cocoapods.EywaSDKBasic")
         print("Bundle Name \(String(describing: bun))")
@@ -93,11 +93,6 @@ public class EywaSDKNetworkReachability: NSObject {
         }
         catch {
         }
-        
-        
-        
-        
-        
     }
     
     //    func method(arg: Bool, completion: (Bool) -> ()) {
