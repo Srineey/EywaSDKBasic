@@ -10,8 +10,7 @@
 		1F12859C22BCB218000B4AF4 /* EywaSDKNetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F12859B22BCB218000B4AF4 /* EywaSDKNetworkReachability.swift */; };
 		1F1285B122BCFD6C000B4AF4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1285B022BCFD6C000B4AF4 /* Reachability.swift */; };
 		1F39B59F22E5DD8E00BFACC6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 1F39B59E22E5DD8E00BFACC6 /* LICENSE */; };
-		1F39B5A722E5F72C00BFACC6 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1F39B5A522E5F72C00BFACC6 /* Info.plist */; };
-		1F39B5A822E5F72C00BFACC6 /* WiFiMacList.json in Resources */ = {isa = PBXBuildFile; fileRef = 1F39B5A622E5F72C00BFACC6 /* WiFiMacList.json */; };
+		1F39B5CA22E6DB0F00BFACC6 /* EywaSDKWifiMacList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F39B5C922E6DB0F00BFACC6 /* EywaSDKWifiMacList.swift */; };
 		1F624C2C21B930DA00D16BFE /* EywaSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F624C2A21B930DA00D16BFE /* EywaSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F624C3921B9328900D16BFE /* EywaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F624C3221B9328800D16BFE /* EywaConstants.swift */; };
 		1F624C3A21B9328900D16BFE /* EywaSDKCodeDeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F624C3321B9328800D16BFE /* EywaSDKCodeDeviceHelper.swift */; };
@@ -24,8 +23,8 @@
 		1F12859B22BCB218000B4AF4 /* EywaSDKNetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EywaSDKNetworkReachability.swift; sourceTree = "<group>"; };
 		1F1285B022BCFD6C000B4AF4 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		1F39B59E22E5DD8E00BFACC6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		1F39B5A522E5F72C00BFACC6 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F39B5A622E5F72C00BFACC6 /* WiFiMacList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = WiFiMacList.json; sourceTree = "<group>"; };
+		1F39B5C922E6DB0F00BFACC6 /* EywaSDKWifiMacList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EywaSDKWifiMacList.swift; sourceTree = "<group>"; };
+		1F59937122E6E1610062F2F2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F624C2721B930DA00D16BFE /* EywaSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EywaSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F624C2A21B930DA00D16BFE /* EywaSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EywaSDK.h; sourceTree = "<group>"; };
 		1F624C3221B9328800D16BFE /* EywaConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EywaConstants.swift; sourceTree = "<group>"; };
@@ -54,15 +53,6 @@
 			path = Reachability;
 			sourceTree = "<group>";
 		};
-		1F39B5A422E5F70B00BFACC6 /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				1F39B5A522E5F72C00BFACC6 /* Info.plist */,
-				1F39B5A622E5F72C00BFACC6 /* WiFiMacList.json */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
 		1F624C1D21B930DA00D16BFE = {
 			isa = PBXGroup;
 			children = (
@@ -83,13 +73,14 @@
 		1F624C2921B930DA00D16BFE /* EywaSDK */ = {
 			isa = PBXGroup;
 			children = (
-				1F39B5A422E5F70B00BFACC6 /* Assets */,
+				1F59937122E6E1610062F2F2 /* Info.plist */,
 				1F12859822BCB182000B4AF4 /* Reachability */,
 				1F624C3221B9328800D16BFE /* EywaConstants.swift */,
 				1F624C3321B9328800D16BFE /* EywaSDKCodeDeviceHelper.swift */,
 				1F624C3821B9328900D16BFE /* EywaSDKCodeManager.swift */,
 				1F624C3721B9328900D16BFE /* EywaSDKResponseManager.swift */,
 				1F12859B22BCB218000B4AF4 /* EywaSDKNetworkReachability.swift */,
+				1F39B5C922E6DB0F00BFACC6 /* EywaSDKWifiMacList.swift */,
 				1F624C3521B9328800D16BFE /* LocationData.swift */,
 				1F624C2A21B930DA00D16BFE /* EywaSDK.h */,
 			);
@@ -165,8 +156,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F39B5A822E5F72C00BFACC6 /* WiFiMacList.json in Resources */,
-				1F39B5A722E5F72C00BFACC6 /* Info.plist in Resources */,
 				1F39B59F22E5DD8E00BFACC6 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,6 +174,7 @@
 				1F12859C22BCB218000B4AF4 /* EywaSDKNetworkReachability.swift in Sources */,
 				1F624C3E21B9328900D16BFE /* EywaSDKResponseManager.swift in Sources */,
 				1F624C3F21B9328900D16BFE /* EywaSDKCodeManager.swift in Sources */,
+				1F39B5CA22E6DB0F00BFACC6 /* EywaSDKWifiMacList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

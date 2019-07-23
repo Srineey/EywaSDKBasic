@@ -41,8 +41,6 @@ public class EywaSDKNetworkReachability: NSObject {
     
     @objc func networkStatusChanged(_ notification: Notification) {
         
-        //        print("Network Status Changed")
-        
         if EywaSDKNetworkReachability.sharedInstance.reachability.connection == .wifi {
             
             print("Connected to Wifi")
@@ -62,48 +60,21 @@ public class EywaSDKNetworkReachability: NSObject {
         let networkMac = deviceHelper.fetchBSSIDInfo()
         
         print("Network Name is \(networkName)")
-        print("Network MAC Well Changed to is \(networkMac)")
+        print("Network MAC is \(networkMac)")
         
-//        let bun = Bundle(identifier: "org.cocoapods.EywaSDKBasic")
-//        print("Bundle Name \(String(describing: bun))")
-        let bun = Bundle(for: EywaSDKNetworkReachability.self)
-          print("Bundle Name \(String(describing: bun))")
-        let path = bun.path(forResource: "WiFiMacList", ofType: "json")
-        print("Path is \(String(describing: path))")
-        let url = bun.url(forResource: "WiFiMacList", withExtension: "json")
-        print("Url is \(String(describing: url))")
-        do {
-            let data = try Data(contentsOf: url!, options: .alwaysMapped)
-            do {
-                let object = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-
-                if let dictionary = object as? [String: AnyObject] {
-
-                    if dictionary[networkMac] != nil {
-
-                        if networkName != "" {
-                        
-                            print("Connected Wifi belongs to SS SSID List")
-                            delegate?.didConnectedToWifi(routerName: networkName)
-                        }
-                    }
-                    else{
-                        print("Connected Wifi not match with SS SSIDs")
-                    }
-                }
-            } catch {
-            }
+        let wifiMacListMgr = EywaSDKWifiMacList.SharedManager
+        
+        let macListDictionary : [String:String] = wifiMacListMgr.wifiMacList()
+        
+        if let val = macListDictionary[networkMac] {
+            
+            print("Connected Wifi belongs to SS SSID List")
+            delegate?.didConnectedToWifi(routerName: val)
         }
-        catch {
+        else{
+            print("No Network Found")
         }
     }
-    
-    //    func method(arg: Bool, completion: (Bool) -> ()) {
-    //        print("First line of code executed")
-    //        // do stuff here to determine what you want to "send back".
-    //        // we are just sending the Boolean value that was sent in "back"
-    //        completion(arg)
-    //    }
     
     static func stopNotifier() -> Void {
         do {
