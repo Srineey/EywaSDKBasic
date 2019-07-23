@@ -62,9 +62,9 @@ public class EywaSDKNetworkReachability: NSObject {
         let networkMac = deviceHelper.fetchBSSIDInfo()
         
         print("Network Name is \(networkName)")
-        print("Network MAC ID is \(networkMac)")
+        print("Network MAC Well is \(networkMac)")
         
-        let bun = Bundle(identifier: "com.eywamedia.EywaSDK")
+        let bun = Bundle(identifier: "org.cocoapods.EywaSDKBasic")
         print("Bundle Name \(String(describing: bun))")
 //        let bun = Bundle(for: EywaSDKNetworkReachability.self)
         let url = bun?.url(forResource: "WiFiMacList", withExtension: "json")
