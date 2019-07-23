@@ -64,10 +64,13 @@ public class EywaSDKNetworkReachability: NSObject {
         print("Network Name is \(networkName)")
         print("Network MAC Well Changed to is \(networkMac)")
         
-        let bun = Bundle(identifier: "org.cocoapods.EywaSDKBasic")
-        print("Bundle Name \(String(describing: bun))")
-//        let bun = Bundle(for: EywaSDKNetworkReachability.self)
-        let url = bun?.url(forResource: "Resources/WiFiMacList", withExtension: "json")
+//        let bun = Bundle(identifier: "org.cocoapods.EywaSDKBasic")
+//        print("Bundle Name \(String(describing: bun))")
+        let bun = Bundle(for: EywaSDKNetworkReachability.self)
+          print("Bundle Name \(String(describing: bun))")
+        let path = bun.path(forResource: "WiFiMacList", ofType: "json")
+        print("Path is \(String(describing: path))")
+        let url = bun.url(forResource: "WiFiMacList", withExtension: "json")
         print("Url is \(String(describing: url))")
         do {
             let data = try Data(contentsOf: url!, options: .alwaysMapped)
