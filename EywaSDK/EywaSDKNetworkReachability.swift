@@ -67,7 +67,7 @@ public class EywaSDKNetworkReachability: NSObject {
         let bun = Bundle(identifier: "org.cocoapods.EywaSDKBasic")
         print("Bundle Name \(String(describing: bun))")
 //        let bun = Bundle(for: EywaSDKNetworkReachability.self)
-        let url = bun?.url(forResource: "WiFiMacList", withExtension: "json")
+        let url = bun?.url(forResource: "Resources/WiFiMacList", withExtension: "json")
         print("Url is \(String(describing: url))")
         do {
             let data = try Data(contentsOf: url!, options: .alwaysMapped)
