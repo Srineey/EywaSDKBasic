@@ -62,7 +62,7 @@ public class EywaSDKNetworkReachability: NSObject {
         let networkMac = deviceHelper.fetchBSSIDInfo()
         
         print("Network Name is \(networkName)")
-        print("Network MACs is \(networkMac)")
+        print("Network MAC ID is \(networkMac)")
         
         let bun = Bundle(identifier: "com.eywamedia.EywaSDK")
         print("Bundle Name \(String(describing: bun))")
