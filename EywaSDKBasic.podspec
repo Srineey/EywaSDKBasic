@@ -15,8 +15,9 @@ Eywa SDK Basic
  
   s.ios.deployment_target = '10.0'
   s.swift_version = '4.0'
-  s.source_files = 'EywaSDK/*.{swift,h}', 'EywaSDK/Reachability/*.swift'
-
+  s.source_files = 'EywaSDK/*.{swift,h}'
+  s.dependency 'ReachabilitySwift'
+	
 
  
 end

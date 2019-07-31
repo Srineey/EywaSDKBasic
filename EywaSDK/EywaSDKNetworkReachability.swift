@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Reachability
+import Reachability
 
 public protocol EywaSDKNetworkReachabilityDelegate {
     func didConnectedToWifi(routerName: String)
