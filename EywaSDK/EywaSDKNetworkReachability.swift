@@ -35,7 +35,7 @@ public class EywaSDKNetworkReachability: NSObject {
         do {
             try reachability.startNotifier()
         } catch {
-            print("Unable to start notifier")
+            print("EywaSDK - Unable to start notifier")
         }
     }
     
@@ -72,7 +72,7 @@ public class EywaSDKNetworkReachability: NSObject {
             delegate?.didConnectedToWifi(routerName: val)
         }
         else{
-            print("No Network Found")
+            print("Connected Wifi not belongs to SS SSID List")
         }
     }
     
@@ -80,7 +80,7 @@ public class EywaSDKNetworkReachability: NSObject {
         do {
             try (EywaSDKNetworkReachability.sharedInstance.reachability).startNotifier()
         } catch {
-            print("Error stopping notifier")
+            print("EywaSDK - Error stopping notifier")
         }
     }
     

@@ -123,7 +123,8 @@ public class EywaSDKWifiMacList: NSObject {
             
             "B8:27:EB:D0:A4:D7": "EywaMedia",
             "B8:27:EB:3E:46:C1": "EywaMedia",
-            "f4:f5:24:af:c4:48":"Eswari - Home"
+            "f4:f5:24:af:c4:48": "Eswari - Home",
+            "d8:d:17:91:42:ea":  "EywaMedia Chennai"
         ]
         
         return macList

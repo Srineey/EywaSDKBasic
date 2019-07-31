@@ -22,12 +22,3 @@ public class EywaConstants : NSObject {
     static let kLastUpdateInstallApi_Time = "LastUpdatedInstallApi_Time"
 }
 
-//EywaInstallationId
-//ServerLocationUpdateApi
-//installApiURL
-//locationCoordinatesArray
-//accessTimeArray
-//DocType
-//installationId
-//LicenseAPIVersion
-//lastUpdatedInstallApi_Time

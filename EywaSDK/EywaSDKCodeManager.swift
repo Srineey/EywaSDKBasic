@@ -203,7 +203,7 @@ public class EywaSDKCodeManager : NSObject, CLLocationManagerDelegate, locationU
             }
             else {
                 
-                print("No ServiceLocation Found")
+                print("EywaSDK - No ServiceLocation Found")
             }
         }
     }
@@ -223,7 +223,7 @@ public class EywaSDKCodeManager : NSObject, CLLocationManagerDelegate, locationU
             }
             else {
                 
-                print("No ServiceLocation Found")
+                print("EywaSDK - No ServiceLocation Found")
             }
         }
     }
@@ -276,7 +276,7 @@ public class EywaSDKCodeManager : NSObject, CLLocationManagerDelegate, locationU
             }
             else {
                 
-                print("Error in Getting Installation ID")
+                print("EywaSDK - Error in Getting Installation ID")
             }
         }
     }
@@ -334,7 +334,7 @@ public class EywaSDKCodeManager : NSObject, CLLocationManagerDelegate, locationU
                     
                     if !error {
                         
-                        print("User Information Updated in Server")
+                        print("EywaSDK - User Information Updated in Server")
                         
                         do {
                             if let updateInstallDict = try JSONSerialization.jsonObject(with: responseData, options: []) as? NSDictionary {
@@ -356,18 +356,18 @@ public class EywaSDKCodeManager : NSObject, CLLocationManagerDelegate, locationU
                     }
                     else {
                         
-                        print("Error in Getting Installation ID")
+                        print("EywaSDK - Error in Getting Installation ID")
                     }
                 }
             }
             else
             {
-                 print("Can't able to update install api. Due to DocType/InstallationId/ServerConfig is nil")
+                 print("EywaSDK - Can't able to update install api. Due to DocType/InstallationId/ServerConfig is nil")
             }
         }
         else {
             
-            print("Can't able to update install api. Due to Location/AccessTime data missing ")
+            print("EywaSDK - Can't able to update install api. Due to Location/AccessTime data missing ")
 //            self.sendUserTrackingInfo()
         }
     }
@@ -399,7 +399,7 @@ public class EywaSDKCodeManager : NSObject, CLLocationManagerDelegate, locationU
                 }
                 else {
 
-                    print("User Monitoring Information Updated less than 24 Hours ago")
+                    print("EywaSDK - User Monitoring Information Updated less than 24 Hours ago")
                 }
             }
             else {
@@ -413,13 +413,13 @@ public class EywaSDKCodeManager : NSObject, CLLocationManagerDelegate, locationU
     
     func sendLocationCoordinates(latitude: String, longitude: String) {
         
-        print("The User Location Coordinates are \(latitude) and \(longitude)")
+        print("EywaSDK - The User Location Coordinates are \(latitude) and \(longitude)")
         
         let userDefaults = UserDefaults.standard
         
         if latitude == "" {
             
-            print("Location Services Disabled")
+            print("EywaSDK - Location Services Disabled")
         }
         else {
             
@@ -604,7 +604,7 @@ public class EywaSDKCodeManager : NSObject, CLLocationManagerDelegate, locationU
         }
         else {
             
-//            print("Both API Versions are NOT EQUAL")
+            print("EywaSDK - Both API Versions are NOT EQUAL")
             userDefaults.removeObject(forKey: EywaConstants.kEywaInstallationId)
             self.licenseKeyCheck()
         }
