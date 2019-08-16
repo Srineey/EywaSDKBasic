@@ -130,4 +130,23 @@ public class EywaSDKWifiMacList: NSObject {
         return macList
     }
     
+    func beanconList() -> Array<Any> {
+        
+        let beaconsArray = [
+            [
+                "UUID" : "EF100AE3-8CF5-442C-A445-2E5B3DBEF100",
+                "Major": "1",
+                "Minor": "167",
+                "Name" : "EYWA-CHN-ENTRANCE"
+            ],
+            [
+                "UUID" : "EF100AE3-8CF5-442C-A445-2E5B3DBEF100",
+                "Major": "1",
+                "Minor": "165",
+                "Name" : "EYWA-CHN-MEETINGROOM"
+            ]
+        ]
+        
+        return beaconsArray
+    }
 }

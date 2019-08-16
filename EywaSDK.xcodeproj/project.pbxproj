@@ -10,6 +10,8 @@
 		1F12859C22BCB218000B4AF4 /* EywaSDKNetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F12859B22BCB218000B4AF4 /* EywaSDKNetworkReachability.swift */; };
 		1F39B59F22E5DD8E00BFACC6 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 1F39B59E22E5DD8E00BFACC6 /* LICENSE */; };
 		1F39B5CA22E6DB0F00BFACC6 /* EywaSDKWifiMacList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F39B5C922E6DB0F00BFACC6 /* EywaSDKWifiMacList.swift */; };
+		1F3A13DD23042460006220EB /* EywaSDKBluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A13DC23042460006220EB /* EywaSDKBluetoothManager.swift */; };
+		1F3A13DF2304257E006220EB /* EywaSDKBeaconReceiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3A13DE2304257E006220EB /* EywaSDKBeaconReceiver.swift */; };
 		1F624C2C21B930DA00D16BFE /* EywaSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F624C2A21B930DA00D16BFE /* EywaSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1F624C3921B9328900D16BFE /* EywaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F624C3221B9328800D16BFE /* EywaConstants.swift */; };
 		1F624C3A21B9328900D16BFE /* EywaSDKCodeDeviceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F624C3321B9328800D16BFE /* EywaSDKCodeDeviceHelper.swift */; };
@@ -23,6 +25,8 @@
 		1F12859B22BCB218000B4AF4 /* EywaSDKNetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EywaSDKNetworkReachability.swift; sourceTree = "<group>"; };
 		1F39B59E22E5DD8E00BFACC6 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1F39B5C922E6DB0F00BFACC6 /* EywaSDKWifiMacList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EywaSDKWifiMacList.swift; sourceTree = "<group>"; };
+		1F3A13DC23042460006220EB /* EywaSDKBluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EywaSDKBluetoothManager.swift; sourceTree = "<group>"; };
+		1F3A13DE2304257E006220EB /* EywaSDKBeaconReceiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EywaSDKBeaconReceiver.swift; sourceTree = "<group>"; };
 		1F59937122E6E1610062F2F2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F624C2721B930DA00D16BFE /* EywaSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EywaSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F624C2A21B930DA00D16BFE /* EywaSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EywaSDK.h; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 				1F624C3821B9328900D16BFE /* EywaSDKCodeManager.swift */,
 				1F624C3721B9328900D16BFE /* EywaSDKResponseManager.swift */,
 				1F12859B22BCB218000B4AF4 /* EywaSDKNetworkReachability.swift */,
+				1F3A13DC23042460006220EB /* EywaSDKBluetoothManager.swift */,
+				1F3A13DE2304257E006220EB /* EywaSDKBeaconReceiver.swift */,
 				1F39B5C922E6DB0F00BFACC6 /* EywaSDKWifiMacList.swift */,
 				1F624C3521B9328800D16BFE /* LocationData.swift */,
 				1F624C2A21B930DA00D16BFE /* EywaSDK.h */,
@@ -97,7 +103,6 @@
 				30F3B4B3C897D9966A5FB843 /* Pods-EywaSDK.debug.xcconfig */,
 				4D8A36450A1257C34E26DDFB /* Pods-EywaSDK.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,7 +213,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F624C3C21B9328900D16BFE /* LocationData.swift in Sources */,
+				1F3A13DD23042460006220EB /* EywaSDKBluetoothManager.swift in Sources */,
 				1F624C3921B9328900D16BFE /* EywaConstants.swift in Sources */,
+				1F3A13DF2304257E006220EB /* EywaSDKBeaconReceiver.swift in Sources */,
 				1F624C3A21B9328900D16BFE /* EywaSDKCodeDeviceHelper.swift in Sources */,
 				1F12859C22BCB218000B4AF4 /* EywaSDKNetworkReachability.swift in Sources */,
 				1F624C3E21B9328900D16BFE /* EywaSDKResponseManager.swift in Sources */,
