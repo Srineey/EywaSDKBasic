@@ -20,5 +20,8 @@ public class EywaConstants : NSObject {
     static let kLicenseDocType = "DocType"
     static let kLincenseAPIVersion = "LicenseAPIVersion"
     static let kLastUpdateInstallApi_Time = "LastUpdatedInstallApi_Time"
+    
+    static let kBeaconUUID = "EF100AE3-8CF5-442C-A445-2E5B3DBEF100"
+    static let kBeaconBundleIdentifier = "com.eywamedia.beaconreceiver"
 }
 

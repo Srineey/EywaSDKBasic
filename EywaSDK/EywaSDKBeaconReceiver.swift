@@ -10,11 +10,11 @@ import UIKit
 import Foundation
 import CoreLocation
 
-protocol BeaconReceiverDelegate {
+public protocol BeaconReceiverDelegate {
     
-    func BroadcastedBeaconInfo(beaconName: String)
+    func ClosestBroadcastedBeaconInfo(beaconName: String)
+    func AllBroadcastedBeaconsInfo(beaconInfo: Dictionary<String, Any>)
 }
-
 
 public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
     
@@ -25,8 +25,8 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
     
     var locationManager : CLLocationManager!
     var beaconRegion : CLBeaconRegion!
-    var delegate: BeaconReceiverDelegate?
-    var isBeaconFound : Bool = false
+    public var delegate: BeaconReceiverDelegate?
+    public var isBeaconMonitoringStopped : Bool = false
     
     let expirationTimeSecs = 5.0
     public var closestBeacon: CLBeacon? = nil
@@ -67,8 +67,8 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
     }
     
     func getBeaconRegion() -> CLBeaconRegion {
-        beaconRegion = CLBeaconRegion.init(proximityUUID: UUID.init(uuidString: "EF100AE3-8CF5-442C-A445-2E5B3DBEF100")!,
-                                           identifier: "com.eywamedia.beaconreceiver")
+        beaconRegion = CLBeaconRegion.init(proximityUUID: UUID.init(uuidString: EywaConstants.kBeaconUUID)!,
+                                           identifier: EywaConstants.kBeaconBundleIdentifier)
         return beaconRegion
     }
     
@@ -88,6 +88,9 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
         
         let now = NSDate()
         for beacon in beacons {
+            
+            validateBeaconWithMacList(UUID: beacon.proximityUUID.uuidString, Major: beacon.major.stringValue, Minor: beacon.minor.stringValue)
+            
             let key = keyForBeacon(beacon: beacon)
             if beacon.accuracy < 0 {
                 NSLog("Ignoring beacon with negative distance")
@@ -145,7 +148,7 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
             
             //            print("ClosestBeacon is \(String(describing: closestBeacon?.minor.stringValue))")
             
-            validateBeaconWithMacList(UUID: (closestBeacon?.proximityUUID.uuidString)!, Major: (closestBeacon?.major.stringValue)!, Minor: (closestBeacon?.minor.stringValue)!)
+            validateClosestBeaconWithMacList(UUID: (closestBeacon?.proximityUUID.uuidString)!, Major: (closestBeacon?.major.stringValue)!, Minor: (closestBeacon?.minor.stringValue)!)
         }
     }
     
@@ -178,7 +181,7 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
     
     // FORCE RESTART BEACON MONITERING
     
-    func startMonitoringBeacons() {
+    public func startMonitoringBeacons() {
         
         locationManager.startMonitoring(for: beaconRegion)
         locationManager.startRangingBeacons(in: beaconRegion)
@@ -186,18 +189,20 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
     
     // FORCE STOP BEACON MONITERING
     
-    func stopMonitoringBeacons() {
+    public func stopMonitoringBeacons() {
         
         print("STOP MONITERING BEACONS")
+        
+        isBeaconMonitoringStopped = true
         
         locationManager.stopMonitoring(for: beaconRegion)
         locationManager.stopRangingBeacons(in: beaconRegion)
         locationManager.stopUpdatingLocation()
     }
     
-    // INITALIZING SOUND CODE DETECTECTOR
+    //CHECK WHETHER DETECTED BEACON IS AVAILABLE IN PRE-DEFINED LIST OR NOT
     
-    public func validateBeaconWithMacList(UUID: String, Major: String, Minor: String) {
+    func validateBeaconWithMacList(UUID: String, Major: String, Minor: String) {
         
         let beaconList = EywaSDKWifiMacList.SharedManager
         
@@ -210,7 +215,7 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
             
             for item in filteredArray {
                 
-                print("Beacon \(item)")
+                //                print("Beacon \(item)")
                 
                 let beaconInfo = item as? Dictionary<String, Any>
                 
@@ -218,7 +223,38 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
                     
                     if beaconInfo!["Name"] != nil {
                         
-                        delegate?.BroadcastedBeaconInfo(beaconName: beaconInfo!["Name"] as! String)
+                        delegate?.AllBroadcastedBeaconsInfo(beaconInfo: beaconInfo!)
+                    }
+                }
+            }
+        }
+    }
+    
+    //CHECK WHETHER DETECTED CLOSEST BEACON IS AVAILABLE IN PRE-DEFINED LIST OR NOT
+    
+    func validateClosestBeaconWithMacList(UUID: String, Major: String, Minor: String) {
+        
+        
+        let beaconList = EywaSDKWifiMacList.SharedManager
+        
+        let beaconListArray = beaconList.beanconList()
+        
+        let predicate = NSPredicate(format: "UUID like %@ AND Major like %@ AND Minor like %@",UUID,Major,Minor);
+        let filteredArray = beaconListArray.filter { predicate.evaluate(with: $0) };
+        
+        if filteredArray.count != 0 {
+            
+            for item in filteredArray {
+                
+                //                print("Beacon \(item)")
+                
+                let beaconInfo = item as? Dictionary<String, Any>
+                
+                if beaconInfo?.keys.count != 0 {
+                    
+                    if beaconInfo!["Name"] != nil {
+                        
+                        delegate?.ClosestBroadcastedBeaconInfo(beaconName: beaconInfo!["Name"] as! String)
                     }
                 }
             }
