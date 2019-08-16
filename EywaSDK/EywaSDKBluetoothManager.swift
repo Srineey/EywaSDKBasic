@@ -32,22 +32,22 @@ public class EywaSDKBluetoothManager: NSObject, CBCentralManagerDelegate, CBPeri
         
         switch central.state {
         case CBManagerState.poweredOn:
-            print("Bluetooth powered On")
+            print("EywaSDK - Bluetooth powered On")
             
         case CBManagerState.poweredOff:
-            print("Bluetooth powered Off")
+            print("EywaSDK - Bluetooth powered Off")
             
         case CBManagerState.unsupported:
-            print("Bluetooth low energy hardware not supported.")
+            print("EywaSDK - Bluetooth low energy hardware not supported.")
             
         case CBManagerState.unauthorized:
-            print("Bluetooth unauthorized state.")
+            print("EywaSDK - Bluetooth unauthorized state.")
             
         case CBManagerState.unknown:
-            print("Bluetooth unknown state.")
+            print("EywaSDK - Bluetooth unknown state.")
             
         default:
-            print("Bluetooth unknown state.")
+            print("EywaSDK - Bluetooth unknown state.")
         }
         
     }

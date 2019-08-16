@@ -135,6 +135,24 @@ public class EywaSDKWifiMacList: NSObject {
         let beaconsArray = [
             [
                 "UUID" : "EF100AE3-8CF5-442C-A445-2E5B3DBEF100",
+                "Major": "712",
+                "Minor": "51",
+                "Name" : "SS-J - GF - Main Entrance"
+            ],
+            [
+                "UUID" : "EF100AE3-8CF5-442C-A445-2E5B3DBEF100",
+                "Major": "712",
+                "Minor": "100",
+                "Name" : "SS-J - SF - PVR Exit"
+            ],
+            [
+                "UUID" : "EF100AE3-8CF5-442C-A445-2E5B3DBEF100",
+                "Major": "712",
+                "Minor": "101",
+                "Name" : "SS-J - GF - Opp to Billing"
+            ],
+            [
+                "UUID" : "EF100AE3-8CF5-442C-A445-2E5B3DBEF100",
                 "Major": "1",
                 "Minor": "167",
                 "Name" : "EYWA-CHN-ENTRANCE"

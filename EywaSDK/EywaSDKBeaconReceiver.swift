@@ -69,14 +69,6 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
             }
         }
         
-        /*self.locationManager = CLLocationManager()
-        guard let locationManager = self.locationManager else {
-            return
-        }
-        
-        locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()*/
-        
         initiateStartScan()
     }
     
@@ -85,10 +77,9 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
         self.locationManager = CLLocationManager()
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.delegate = self
-        //        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        //        self.locationManager.distanceFilter = 50
-        //        self.locationManager.startUpdatingLocation()
     }
+    
+    //START SCANNING
     
     public func initiateStartScan(){
         startScanningForBeaconRegion(beaconRegion: getBeaconRegion())
@@ -106,30 +97,24 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
     }
     
     func getBeaconRegion() -> CLBeaconRegion {
-        beaconRegion = CLBeaconRegion.init(proximityUUID: UUID.init(uuidString: "EF100AE3-8CF5-442C-A445-2E5B3DBEF100")!,
-                                           identifier: "com.eywamedia.beaconfinder")
+        beaconRegion = CLBeaconRegion.init(proximityUUID: UUID.init(uuidString: EywaConstants.kBeaconUUID)!,
+                                           identifier: EywaConstants.kBeaconBundleIdentifier)
         return beaconRegion
     }
     
-    public func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        print("Entered into the region")
-    }
-    
-    public func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-        print("Existed from region")
-    }
+    //LOCATION MANAGER DELEGATES
     
     public func locationManager(_ manager: CLLocationManager, didDetermineState state: CLRegionState, for region: CLRegion) {
         
         switch (state) {
         case CLRegionState.inside:
-            print("Inside State")
+            print("EywaSDK - CLRegion Inside State")
             break;
         case CLRegionState.outside:
-            print("Outside State")
+            print("EywaSDK - CLRegion Outside State")
             break;
         case CLRegionState.unknown:
-            print("Unknown State")
+            print("EywaSDK - CLRegion Unknown State")
             break;
         default:
             break;
@@ -137,15 +122,15 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
     }
     
     public func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
-        print("monitoringDidFail")
+        print("EywaSDK - Beacon monitoringDidFail")
     }
     
     public func locationManager(_ manager: CLLocationManager, rangingBeaconsDidFailFor region: CLBeaconRegion, withError error: Error) {
-        print("rangingBeaconsDidFailFor \(error)")
+        print("EywaSDK - Beacon rangingBeaconsDidFailFor \(error)")
     }
     
     public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("didFailWithError \(error)")
+        print("EywaSDK - Beacon didFailWithError \(error)")
     }
     
     public func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
@@ -157,7 +142,7 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
             
             let key = keyForBeacon(beacon: beacon)
             if beacon.accuracy < 0 {
-                NSLog("Ignoring beacon with negative distance")
+                NSLog("EywaSDK - Ignoring beacon with negative distance")
             }
             else {
                 trackedBeacons[key] = beacon
@@ -255,7 +240,7 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
     
     public func stopMonitoringBeacons() {
         
-        print("STOP MONITERING BEACONS")
+        print("EywaSDK - STOP MONITERING BEACONS")
         
         isBeaconMonitoringStopped = true
         
