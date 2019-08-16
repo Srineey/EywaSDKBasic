@@ -40,15 +40,54 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
         
         super.init()
         
-        self.locationManager = CLLocationManager()
+        if locationManager == nil {
+            
+            if CLLocationManager.locationServicesEnabled() {
+                
+                switch CLLocationManager.authorizationStatus()
+                {
+                case .notDetermined:
+                    
+                    print("User Location Not Detetmined yet")
+                    self.setLocationManager()
+                    
+                case .restricted, .denied:
+                    
+                    print("No access for Location")
+                    
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "LocationServicesDisabled"), object: nil)
+                    
+                case .authorizedAlways, .authorizedWhenInUse:
+                    
+                    print("Access Enabled for Location")
+                    self.setLocationManager()
+                @unknown default:
+                    print("Default case")
+                }
+            } else {
+                print("Location services are not enabled")
+            }
+        }
+        
+        /*self.locationManager = CLLocationManager()
         guard let locationManager = self.locationManager else {
             return
         }
         
         locationManager.delegate = self
-        locationManager.requestAlwaysAuthorization()
+        locationManager.requestAlwaysAuthorization()*/
         
         initiateStartScan()
+    }
+    
+    func setLocationManager() {
+        
+        self.locationManager = CLLocationManager()
+        self.locationManager.requestAlwaysAuthorization()
+        self.locationManager.delegate = self
+        //        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        //        self.locationManager.distanceFilter = 50
+        //        self.locationManager.startUpdatingLocation()
     }
     
     public func initiateStartScan(){
@@ -67,24 +106,49 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
     }
     
     func getBeaconRegion() -> CLBeaconRegion {
-        beaconRegion = CLBeaconRegion.init(proximityUUID: UUID.init(uuidString: EywaConstants.kBeaconUUID)!,
-                                           identifier: EywaConstants.kBeaconBundleIdentifier)
+        beaconRegion = CLBeaconRegion.init(proximityUUID: UUID.init(uuidString: "EF100AE3-8CF5-442C-A445-2E5B3DBEF100")!,
+                                           identifier: "com.eywamedia.beaconfinder")
         return beaconRegion
     }
     
-    private func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
+    public func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        print("Entered into the region")
+    }
+    
+    public func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+        print("Existed from region")
+    }
+    
+    public func locationManager(_ manager: CLLocationManager, didDetermineState state: CLRegionState, for region: CLRegion) {
+        
+        switch (state) {
+        case CLRegionState.inside:
+            print("Inside State")
+            break;
+        case CLRegionState.outside:
+            print("Outside State")
+            break;
+        case CLRegionState.unknown:
+            print("Unknown State")
+            break;
+        default:
+            break;
+        }
+    }
+    
+    public func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
         print("monitoringDidFail")
     }
     
-    private func locationManager(_ manager: CLLocationManager, rangingBeaconsDidFailFor region: CLBeaconRegion, withError error: Error) {
+    public func locationManager(_ manager: CLLocationManager, rangingBeaconsDidFailFor region: CLBeaconRegion, withError error: Error) {
         print("rangingBeaconsDidFailFor \(error)")
     }
     
-    private func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    public func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("didFailWithError \(error)")
     }
     
-    private func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
+    public func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         
         let now = NSDate()
         for beacon in beacons {
