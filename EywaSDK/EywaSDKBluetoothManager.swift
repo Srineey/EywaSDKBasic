@@ -12,7 +12,7 @@ import CoreBluetooth
 
 public class EywaSDKBluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     
-    static let sharedInstance: EywaSDKBluetoothManager = {
+    public static let sharedInstance: EywaSDKBluetoothManager = {
         let instance = EywaSDKBluetoothManager()
         return instance
     }()

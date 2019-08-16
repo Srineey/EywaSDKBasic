@@ -18,7 +18,7 @@ protocol BeaconReceiverDelegate {
 
 public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
     
-    static let sharedInstance: EywaSDKBeaconReceiver = {
+    public static let sharedInstance: EywaSDKBeaconReceiver = {
         let instance = EywaSDKBeaconReceiver()
         return instance
     }()
