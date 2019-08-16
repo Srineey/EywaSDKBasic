@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import CoreBluetooth
 
-class EywaSDKBluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
+public class EywaSDKBluetoothManager: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     
     static let sharedInstance: EywaSDKBluetoothManager = {
         let instance = EywaSDKBluetoothManager()

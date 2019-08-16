@@ -16,7 +16,7 @@ protocol BeaconReceiverDelegate {
 }
 
 
-class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
+public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
     
     static let sharedInstance: EywaSDKBeaconReceiver = {
         let instance = EywaSDKBeaconReceiver()
@@ -51,7 +51,7 @@ class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
         initiateStartScan()
     }
     
-    func initiateStartScan(){
+    public func initiateStartScan(){
         startScanningForBeaconRegion(beaconRegion: getBeaconRegion())
     }
     
@@ -68,23 +68,23 @@ class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
     
     func getBeaconRegion() -> CLBeaconRegion {
         beaconRegion = CLBeaconRegion.init(proximityUUID: UUID.init(uuidString: "EF100AE3-8CF5-442C-A445-2E5B3DBEF100")!,
-                                           identifier: "com.devfright.myRegion")
+                                           identifier: "com.eywamedia.beaconreceiver")
         return beaconRegion
     }
     
-    func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
+    private func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
         print("monitoringDidFail")
     }
     
-    func locationManager(_ manager: CLLocationManager, rangingBeaconsDidFailFor region: CLBeaconRegion, withError error: Error) {
+    private func locationManager(_ manager: CLLocationManager, rangingBeaconsDidFailFor region: CLBeaconRegion, withError error: Error) {
         print("rangingBeaconsDidFailFor \(error)")
     }
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+    private func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("didFailWithError \(error)")
     }
     
-    func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
+    private func locationManager(_ manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], in region: CLBeaconRegion) {
         
         let now = NSDate()
         for beacon in beacons {
@@ -106,7 +106,7 @@ class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
         calculateClosestBeacon()        
     }
     
-    func calculateClosestBeacon() {
+    public func calculateClosestBeacon() {
         var changed = false
         // Initialize cloestBeaconCandidate to the latest tracked instance of current closest beacon
         var closestBeaconCandidate: CLBeacon?
@@ -149,11 +149,11 @@ class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
         }
     }
     
-    func keyForBeacon(beacon: CLBeacon) -> String {
+    public func keyForBeacon(beacon: CLBeacon) -> String {
         return "\(beacon.proximityUUID.uuidString) \(beacon.major) \(beacon.minor)"
     }
     
-    func purgeExpiredBeacons() {
+    public func purgeExpiredBeacons() {
         let now = NSDate()
         var changed = false
         var newTrackedBeacons = Dictionary<String, CLBeacon>()
@@ -197,7 +197,7 @@ class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
     
     // INITALIZING SOUND CODE DETECTECTOR
     
-    func validateBeaconWithMacList(UUID: String, Major: String, Minor: String) {
+    public func validateBeaconWithMacList(UUID: String, Major: String, Minor: String) {
         
         let beaconList = EywaSDKWifiMacList.SharedManager
         
