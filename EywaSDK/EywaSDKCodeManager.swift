@@ -38,7 +38,7 @@ public class EywaSDKCodeManager : NSObject, CLLocationManagerDelegate, locationU
     
     //MARK: Check LicenseKey Api
 
-    public func licenseKeyCheck() {
+    public func licenseKeyCheck(completion:(Bool) -> Void) {
         
         print("EywaSDK LicenseKeyCheck Called")
         
@@ -59,6 +59,7 @@ public class EywaSDKCodeManager : NSObject, CLLocationManagerDelegate, locationU
                     if error != nil
                     {
                         print("error=\(String(describing: error) )")
+                        completion(false)
                         return
                     }
                     
@@ -154,12 +155,22 @@ public class EywaSDKCodeManager : NSObject, CLLocationManagerDelegate, locationU
                                             UserDefaults.standard.set(docTypeString, forKey: EywaConstants.kLicenseDocType)
                                         }
                                         
-                                        self.getInstallationId()
+//                                        self.getInstallationId()
+                                        self.getInstallationId() {
+                                            (isSuccess:Bool) in
+                                            
+                                            if isSuccess {
+                                                completion(true)
+                                            }
+                                            else {
+                                                completion(false)
+                                            }
+                                        }
                                     }
                                     else {
                                         print("EywaSDK - Invalid License Key")
+                                        completion(false)
                                     }
-                                    
                                 }
                             }
                             
@@ -177,10 +188,11 @@ public class EywaSDKCodeManager : NSObject, CLLocationManagerDelegate, locationU
             }
             else {
                 print("EywaSDK - LicenseKey is empty")
+                completion(false)
             }
         }
         else {
-            
+            completion(true)
             self.getUserTrackingInfo()
         }
     }
@@ -230,7 +242,7 @@ public class EywaSDKCodeManager : NSObject, CLLocationManagerDelegate, locationU
     
     //MARK: Get Installation Id Api
     
-    private func getInstallationId() {
+    private func getInstallationId(completion:(Bool) -> Void) {
         
         let paramDictData : NSDictionary = self.jsonUserData()
         
@@ -260,6 +272,8 @@ public class EywaSDKCodeManager : NSObject, CLLocationManagerDelegate, locationU
                                 
                                 UserDefaults.standard.setValue(installID, forKey: EywaConstants.kEywaInstallationId)
                                 
+                                completion(true)
+                                
                                 if !self.isAllowToUpdateInstallApi {
                                     
                                     self.isAllowToUpdateInstallApi = true
@@ -268,15 +282,21 @@ public class EywaSDKCodeManager : NSObject, CLLocationManagerDelegate, locationU
                                 }
                             }
                         }
+                        else {
+                            completion(false)
+                        }
                     }
                 }
                 catch let error as NSError {
                     print(error.localizedDescription)
+                    completion(false)
                 }
             }
             else {
                 
                 print("EywaSDK - Error in Getting Installation ID")
+                
+                completion(false)
             }
         }
     }
