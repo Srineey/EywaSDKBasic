@@ -38,7 +38,7 @@ public class EywaSDKCodeManager : NSObject, CLLocationManagerDelegate, locationU
     
     //MARK: Check LicenseKey Api
 
-    public func licenseKeyCheck(completion:(Bool) -> Void) {
+    public func licenseKeyCheck(completion:@escaping(Bool) -> Void) {
         
         print("EywaSDK LicenseKeyCheck Called")
         
@@ -242,7 +242,7 @@ public class EywaSDKCodeManager : NSObject, CLLocationManagerDelegate, locationU
     
     //MARK: Get Installation Id Api
     
-    private func getInstallationId(completion:(Bool) -> Void) {
+    private func getInstallationId(completion:@escaping(Bool) -> Void) {
         
         let paramDictData : NSDictionary = self.jsonUserData()
         
@@ -626,7 +626,13 @@ public class EywaSDKCodeManager : NSObject, CLLocationManagerDelegate, locationU
             
             print("EywaSDK - Both API Versions are NOT EQUAL")
             userDefaults.removeObject(forKey: EywaConstants.kEywaInstallationId)
-            self.licenseKeyCheck()
+            self.licenseKeyCheck() {
+                (isValidLicense:Bool) in
+                
+                if isValidLicense {
+                    print("Valid License")
+                }
+            }
         }
     }
     
