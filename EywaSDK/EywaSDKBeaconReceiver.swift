@@ -122,7 +122,7 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
     }
     
     public func locationManager(_ manager: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {
-        print("EywaSDK - Beacon monitoringDidFail")
+        print("EywaSDK - Beacon monitoringDidFail \(error)")
     }
     
     public func locationManager(_ manager: CLLocationManager, rangingBeaconsDidFailFor region: CLBeaconRegion, withError error: Error) {
