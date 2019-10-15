@@ -155,7 +155,10 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
             }
         }
         purgeExpiredBeacons()
-        calculateClosestBeacon()        
+        
+        if beacons.count > 0 {
+            calculateClosestBeacon()
+        }
     }
     
     public func calculateClosestBeacon() {

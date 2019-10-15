@@ -136,32 +136,32 @@ public class EywaSDKWifiMacList: NSObject {
             [
                 "UUID" : "EF100AE3-8CF5-442C-A445-2E5B3DBEF100",
                 "Major": "712",
-                "Minor": "51",
-                "Name" : "SS-J - GF - Main Entrance"
+                "Minor": "183",
+                "Name" : "SS-J-Test1 (Vodafone)"//SS-J - GF - Main Entrance
             ],
             [
                 "UUID" : "EF100AE3-8CF5-442C-A445-2E5B3DBEF100",
                 "Major": "712",
-                "Minor": "100",
-                "Name" : "SS-J - SF - PVR Exit"
+                "Minor": "176",
+                "Name" : "SS-J-Test2 (Airtel)"//SS-J - SF - PVR Exit
             ],
             [
                 "UUID" : "EF100AE3-8CF5-442C-A445-2E5B3DBEF100",
                 "Major": "712",
-                "Minor": "101",
-                "Name" : "SS-J - GF - Opp to Billing"
+                "Minor": "39",
+                "Name" : "SS-J-Test3 (Airtel)"//SS-J - GF - Opp to Billing
             ],
             [
                 "UUID" : "EF100AE3-8CF5-442C-A445-2E5B3DBEF100",
                 "Major": "1",
                 "Minor": "167",
-                "Name" : "EYWA-CHN-ENTRANCE"
+                "Name" : "EYWA-CHN-TEST1"
             ],
             [
                 "UUID" : "EF100AE3-8CF5-442C-A445-2E5B3DBEF100",
                 "Major": "1",
                 "Minor": "165",
-                "Name" : "EYWA-CHN-MEETINGROOM"
+                "Name" : "EYWA-CHN-TEST2"
             ]
         ]
         
