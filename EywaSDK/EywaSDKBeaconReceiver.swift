@@ -12,6 +12,7 @@ import CoreLocation
 
 public protocol BeaconReceiverDelegate {
     
+    func DetectedBeaconInfo(beaconUUID: String, Major: String, Minor: String)
     func ClosestBroadcastedBeaconInfo(beaconName: String)
     func AllBroadcastedBeaconsInfo(beaconInfo: Dictionary<String, Any>)
 }
@@ -255,6 +256,8 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
     //CHECK WHETHER DETECTED BEACON IS AVAILABLE IN PRE-DEFINED LIST OR NOT
     
     func validateBeaconWithMacList(UUID: String, Major: String, Minor: String) {
+        
+        delegate?.DetectedBeaconInfo(beaconUUID: UUID, Major: Major, Minor: Minor)
         
         let beaconList = EywaSDKWifiMacList.SharedManager
         
