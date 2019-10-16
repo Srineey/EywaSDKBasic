@@ -15,7 +15,7 @@ public protocol EywaSDKNetworkReachabilityDelegate {
 
 public class EywaSDKNetworkReachability: NSObject {
     
-    var reachability: Reachability!
+    var reachability: Reachability?
     public var delegate: EywaSDKNetworkReachabilityDelegate?
     
     public static let sharedInstance: EywaSDKNetworkReachability = { return EywaSDKNetworkReachability() }()
@@ -23,7 +23,7 @@ public class EywaSDKNetworkReachability: NSObject {
     override init() {
         super.init()
         
-        reachability = Reachability()!
+        reachability = Reachability()
         
         NotificationCenter.default.addObserver(
             self,
@@ -33,7 +33,7 @@ public class EywaSDKNetworkReachability: NSObject {
         )
         
         do {
-            try reachability.startNotifier()
+            try reachability?.startNotifier()
         } catch {
             print("EywaSDK - Unable to start notifier")
         }
@@ -41,7 +41,7 @@ public class EywaSDKNetworkReachability: NSObject {
     
     @objc func networkStatusChanged(_ notification: Notification) {
         
-        if EywaSDKNetworkReachability.sharedInstance.reachability.connection == .wifi {
+        if EywaSDKNetworkReachability.sharedInstance.reachability?.connection == .wifi {
             
             print("Connected to Wifi")
             
@@ -78,32 +78,32 @@ public class EywaSDKNetworkReachability: NSObject {
     
     static func stopNotifier() -> Void {
         do {
-            try (EywaSDKNetworkReachability.sharedInstance.reachability).startNotifier()
+            try (EywaSDKNetworkReachability.sharedInstance.reachability)?.startNotifier()
         } catch {
             print("EywaSDK - Error stopping notifier")
         }
     }
     
     static func isReachable(completed: @escaping (EywaSDKNetworkReachability) -> Void) {
-        if (EywaSDKNetworkReachability.sharedInstance.reachability).connection != .none {
+        if (EywaSDKNetworkReachability.sharedInstance.reachability)?.connection != Reachability.Connection.none {
             completed(EywaSDKNetworkReachability.sharedInstance)
         }
     }
     
     static func isUnreachable(completed: @escaping (EywaSDKNetworkReachability) -> Void) {
-        if (EywaSDKNetworkReachability.sharedInstance.reachability).connection == .none {
+        if (EywaSDKNetworkReachability.sharedInstance.reachability)?.connection == Reachability.Connection.none {
             completed(EywaSDKNetworkReachability.sharedInstance)
         }
     }
     
     static func isReachableViaWWAN(completed: @escaping (EywaSDKNetworkReachability) -> Void) {
-        if (EywaSDKNetworkReachability.sharedInstance.reachability).connection == .cellular {
+        if (EywaSDKNetworkReachability.sharedInstance.reachability)?.connection == .cellular {
             completed(EywaSDKNetworkReachability.sharedInstance)
         }
     }
     
     static func isReachableViaWiFi(completed: @escaping (EywaSDKNetworkReachability) -> Void) {
-        if (EywaSDKNetworkReachability.sharedInstance.reachability).connection == .wifi {
+        if (EywaSDKNetworkReachability.sharedInstance.reachability)?.connection == .wifi {
             completed(EywaSDKNetworkReachability.sharedInstance)
         }
     }
