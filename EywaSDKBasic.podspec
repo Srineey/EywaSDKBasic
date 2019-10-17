@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'EywaSDKBasic'
-  s.version          = '0.1.31'
+  s.version          = '0.1.32'
   s.summary          = 'Eywa SDK.'
  
   s.description      = <<-DESC
