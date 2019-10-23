@@ -12,7 +12,7 @@ import CoreLocation
 
 public protocol BeaconReceiverDelegate {
     
-    func DetectedBeaconInfo(beaconUUID: String, Major: String, Minor: String)
+    func DetectedBeaconInfo(beaconUUID: String, Major: String, Minor: String, Proximity: String, Accuracy: String)
     func ClosestBroadcastedBeaconInfo(beaconName: String)
     func AllBroadcastedBeaconsInfo(beaconInfo: Dictionary<String, Any>)
 }
@@ -139,7 +139,7 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
         let now = NSDate()
         for beacon in beacons {
             
-            validateBeaconWithMacList(UUID: beacon.proximityUUID.uuidString, Major: beacon.major.stringValue, Minor: beacon.minor.stringValue)
+            validateBeaconWithMacList(UUID: beacon.proximityUUID.uuidString, Major: beacon.major.stringValue, Minor: beacon.minor.stringValue, ActualBeacon: beacon)
             
             let key = keyForBeacon(beacon: beacon)
             if beacon.accuracy < 0 {
@@ -159,6 +159,19 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
         
         if beacons.count > 0 {
             calculateClosestBeacon()
+        }
+    }
+    
+    func nameForProximity(_ proximity: CLProximity) -> String {
+        switch proximity {
+        case .unknown:
+            return "Unknown"
+        case .immediate:
+            return "Immediate"
+        case .near:
+            return "Near"
+        case .far:
+            return "Far"
         }
     }
     
@@ -255,9 +268,12 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
     
     //CHECK WHETHER DETECTED BEACON IS AVAILABLE IN PRE-DEFINED LIST OR NOT
     
-    func validateBeaconWithMacList(UUID: String, Major: String, Minor: String) {
+    func validateBeaconWithMacList(UUID: String, Major: String, Minor: String, ActualBeacon: CLBeacon) {
         
-        delegate?.DetectedBeaconInfo(beaconUUID: UUID, Major: Major, Minor: Minor)
+        let proximity = nameForProximity(ActualBeacon.proximity)
+        let accuracy = String(format: "%.2f", ActualBeacon.accuracy)
+        
+        delegate?.DetectedBeaconInfo(beaconUUID: UUID, Major: Major, Minor: Minor, Proximity: proximity, Accuracy: accuracy)
         
         let beaconList = EywaSDKWifiMacList.SharedManager
         
