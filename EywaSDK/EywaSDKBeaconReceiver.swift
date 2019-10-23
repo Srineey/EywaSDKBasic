@@ -270,10 +270,25 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
     
     func validateBeaconWithMacList(UUID: String, Major: String, Minor: String, ActualBeacon: CLBeacon) {
         
-        let proximity = nameForProximity(ActualBeacon.proximity)
-        let accuracy = String(format: "%.2f", ActualBeacon.accuracy)
+        if ActualBeacon.accuracy < 0 {
+            
+            print("Its into the loop")
+            
+            let proximity = nameForProximity(ActualBeacon.proximity)
+            let accuracy = String(format: "%.2f", ActualBeacon.accuracy)
+            
+            print("accuracy is \(accuracy)")
+            
+            delegate?.DetectedBeaconInfo(beaconUUID: UUID, Major: Major, Minor: Minor, Proximity: proximity, Accuracy: accuracy)
+        }
+        else {
+            
+            print("Accuracy is native value")
+            
+            delegate?.DetectedBeaconInfo(beaconUUID: UUID, Major: Major, Minor: Minor, Proximity: "NA", Accuracy: "NA")
+        }
         
-        delegate?.DetectedBeaconInfo(beaconUUID: UUID, Major: Major, Minor: Minor, Proximity: proximity, Accuracy: accuracy)
+        
         
         let beaconList = EywaSDKWifiMacList.SharedManager
         
