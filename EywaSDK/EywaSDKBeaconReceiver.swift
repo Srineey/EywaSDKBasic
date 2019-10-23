@@ -270,7 +270,7 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
     
     func validateBeaconWithMacList(UUID: String, Major: String, Minor: String, ActualBeacon: CLBeacon) {
         
-        if ActualBeacon.accuracy < 0 {
+        if ActualBeacon.accuracy > 0 {
             
             print("Its into the loop")
             
