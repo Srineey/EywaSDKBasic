@@ -12,9 +12,13 @@ import CoreLocation
 
 public protocol BeaconReceiverDelegate {
     
-    func DetectedBeaconInfo(beaconUUID: String, Major: String, Minor: String, Proximity: String, Accuracy: String)
     func ClosestBroadcastedBeaconInfo(beaconName: String)
     func AllBroadcastedBeaconsInfo(beaconInfo: Dictionary<String, Any>)
+}
+
+public protocol BeaconStatusUpdateDelegate {
+    
+    func beaconStatusUpdate(status: String)
 }
 
 public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
@@ -139,7 +143,7 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
         let now = NSDate()
         for beacon in beacons {
             
-            validateBeaconWithMacList(UUID: beacon.proximityUUID.uuidString, Major: beacon.major.stringValue, Minor: beacon.minor.stringValue, ActualBeacon: beacon)
+            validateBeaconWithMacList(UUID: beacon.proximityUUID.uuidString, Major: beacon.major.stringValue, Minor: beacon.minor.stringValue)
             
             let key = keyForBeacon(beacon: beacon)
             if beacon.accuracy < 0 {
@@ -159,19 +163,6 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
         
         if beacons.count > 0 {
             calculateClosestBeacon()
-        }
-    }
-    
-    func nameForProximity(_ proximity: CLProximity) -> String {
-        switch proximity {
-        case .unknown:
-            return "Unknown"
-        case .immediate:
-            return "Immediate"
-        case .near:
-            return "Near"
-        case .far:
-            return "Far"
         }
     }
     
@@ -268,27 +259,7 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
     
     //CHECK WHETHER DETECTED BEACON IS AVAILABLE IN PRE-DEFINED LIST OR NOT
     
-    func validateBeaconWithMacList(UUID: String, Major: String, Minor: String, ActualBeacon: CLBeacon) {
-        
-        if ActualBeacon.accuracy > 0 {
-            
-            print("Its into the loop")
-            
-            let proximity = nameForProximity(ActualBeacon.proximity)
-            let accuracy = String(format: "%.2f", ActualBeacon.accuracy)
-            
-            print("accuracy is \(accuracy)")
-            
-            delegate?.DetectedBeaconInfo(beaconUUID: UUID, Major: Major, Minor: Minor, Proximity: proximity, Accuracy: accuracy)
-        }
-        else {
-            
-            print("Accuracy is native value")
-            
-            delegate?.DetectedBeaconInfo(beaconUUID: UUID, Major: Major, Minor: Minor, Proximity: "NA", Accuracy: "NA")
-        }
-        
-        
+    func validateBeaconWithMacList(UUID: String, Major: String, Minor: String) {
         
         let beaconList = EywaSDKWifiMacList.SharedManager
         
@@ -319,7 +290,6 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
     //CHECK WHETHER DETECTED CLOSEST BEACON IS AVAILABLE IN PRE-DEFINED LIST OR NOT
     
     func validateClosestBeaconWithMacList(UUID: String, Major: String, Minor: String) {
-        
         
         let beaconList = EywaSDKWifiMacList.SharedManager
         
