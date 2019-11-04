@@ -13,8 +13,8 @@ import CoreLocation
 public protocol BeaconReceiverDelegate {
     
     func ClosestBroadcastedBeaconInfo(beaconName: String)
-    func AllBroadcastedBeaconsInfo(beaconInfo: Dictionary<String, Any>)
-    func BeaconEstimatedDistance(Name: String, beacon: CLBeacon)
+//    func AllBroadcastedBeaconsInfo(beaconInfo: Dictionary<String, Any>)
+    func BeaconEstimatedDistance(beaconInfo: Dictionary<String, Any>, beaconDistance: CLBeacon)
 }
 
 public protocol BeaconStatusUpdateDelegate {
@@ -36,6 +36,7 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
     
     let expirationTimeSecs = 5.0
     public var closestBeacon: CLBeacon? = nil
+    public var detectedBeacon: CLBeacon? = nil
     var trackedBeacons: Dictionary<String, CLBeacon>
     var trackedBeaconTimes: Dictionary<String, NSDate>
 
@@ -266,6 +267,8 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
         
         let beaconListArray = beaconList.beanconList()
         
+        self.detectedBeacon = beacon
+        
         let predicate = NSPredicate(format: "UUID like %@ AND Major like %@ AND Minor like %@",beacon.proximityUUID.uuidString,beacon.major.stringValue,beacon.minor.stringValue);
         let filteredArray = beaconListArray.filter { predicate.evaluate(with: $0) };
         
@@ -281,9 +284,9 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
                     
                     if beaconInfo!["Name"] != nil {
                         
-                        delegate?.AllBroadcastedBeaconsInfo(beaconInfo: beaconInfo!)
+//                        delegate?.AllBroadcastedBeaconsInfo(beaconInfo: beaconInfo!)
                         
-                        delegate?.BeaconEstimatedDistance(Name: beaconInfo!["Name"] as! String, beacon: beacon)
+                        delegate?.BeaconEstimatedDistance(beaconInfo: beaconInfo!, beaconDistance: self.detectedBeacon!)
                     }
                 }
             }
