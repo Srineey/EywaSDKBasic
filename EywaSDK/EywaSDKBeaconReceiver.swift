@@ -14,7 +14,7 @@ public protocol BeaconReceiverDelegate {
     
     func ClosestBroadcastedBeaconInfo(beaconName: String)
     func AllBroadcastedBeaconsInfo(beaconInfo: Dictionary<String, Any>)
-    func BeaconEstimatedDistance(UUID: String, Major: String, Minor: String, distance: String)
+    func BeaconEstimatedDistance(Name: String, UUID: String, Major: String, Minor: String, distance: String)
 }
 
 public protocol BeaconStatusUpdateDelegate {
@@ -284,7 +284,7 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
                         delegate?.AllBroadcastedBeaconsInfo(beaconInfo: beaconInfo!)
                         
                         let accuracy = String(format: "%.2f", beacon.accuracy)
-                        delegate?.BeaconEstimatedDistance(UUID: beacon.proximityUUID.uuidString, Major: beacon.major.stringValue, Minor: beacon.minor.stringValue, distance: accuracy)
+                        delegate?.BeaconEstimatedDistance(Name: beaconInfo!["Name"] as! String,UUID: beacon.proximityUUID.uuidString, Major: beacon.major.stringValue, Minor: beacon.minor.stringValue, distance: accuracy)
                     }
                 }
             }
