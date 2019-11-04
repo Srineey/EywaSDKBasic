@@ -143,6 +143,7 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
         let now = NSDate()
         for beacon in beacons {
             
+            getBeaconDetails(detectedBeacon: beacon)
             validateBeaconWithMacList(UUID: beacon.proximityUUID.uuidString, Major: beacon.major.stringValue, Minor: beacon.minor.stringValue)
             
             let key = keyForBeacon(beacon: beacon)
@@ -164,6 +165,14 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
         if beacons.count > 0 {
             calculateClosestBeacon()
         }
+    }
+    
+    public func getBeaconDetails(detectedBeacon : CLBeacon) {
+        
+        let accuracy = String(format: "%.2f", detectedBeacon.accuracy)
+        
+        print("Detected Beacon Info - UUID : \(detectedBeacon.proximityUUID.uuidString) ***** Major : \(detectedBeacon.major.stringValue) ***** Minor : \(detectedBeacon.minor.stringValue) ***** Est Distance : \(accuracy)")
+        
     }
     
     public func calculateClosestBeacon() {
