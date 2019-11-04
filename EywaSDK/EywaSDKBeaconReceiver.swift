@@ -14,6 +14,7 @@ public protocol BeaconReceiverDelegate {
     
     func ClosestBroadcastedBeaconInfo(beaconName: String)
     func AllBroadcastedBeaconsInfo(beaconInfo: Dictionary<String, Any>)
+    func BeaconEstimatedDistance(UUID: String, Major: String, Minor: String, distance: String)
 }
 
 public protocol BeaconStatusUpdateDelegate {
@@ -143,8 +144,7 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
         let now = NSDate()
         for beacon in beacons {
             
-            getBeaconDetails(detectedBeacon: beacon)
-            validateBeaconWithMacList(UUID: beacon.proximityUUID.uuidString, Major: beacon.major.stringValue, Minor: beacon.minor.stringValue)
+            validateBeaconWithMacList(beacon: beacon)
             
             let key = keyForBeacon(beacon: beacon)
             if beacon.accuracy < 0 {
@@ -165,14 +165,6 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
         if beacons.count > 0 {
             calculateClosestBeacon()
         }
-    }
-    
-    public func getBeaconDetails(detectedBeacon : CLBeacon) {
-        
-        let accuracy = String(format: "%.2f", detectedBeacon.accuracy)
-        
-        print("Detected Beacon Info - UUID : \(detectedBeacon.proximityUUID.uuidString) ***** Major : \(detectedBeacon.major.stringValue) ***** Minor : \(detectedBeacon.minor.stringValue) ***** Est Distance : \(accuracy)")
-        
     }
     
     public func calculateClosestBeacon() {
@@ -268,7 +260,38 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
     
     //CHECK WHETHER DETECTED BEACON IS AVAILABLE IN PRE-DEFINED LIST OR NOT
     
-    func validateBeaconWithMacList(UUID: String, Major: String, Minor: String) {
+    func validateBeaconWithMacList(beacon : CLBeacon) {
+        
+        let beaconList = EywaSDKWifiMacList.SharedManager
+        
+        let beaconListArray = beaconList.beanconList()
+        
+        let predicate = NSPredicate(format: "UUID like %@ AND Major like %@ AND Minor like %@",beacon.proximityUUID.uuidString,beacon.major.stringValue,beacon.minor.stringValue);
+        let filteredArray = beaconListArray.filter { predicate.evaluate(with: $0) };
+        
+        if filteredArray.count != 0 {
+            
+            for item in filteredArray {
+                
+                //                print("Beacon \(item)")
+                
+                let beaconInfo = item as? Dictionary<String, Any>
+                
+                if beaconInfo?.keys.count != 0 {
+                    
+                    if beaconInfo!["Name"] != nil {
+                        
+                        delegate?.AllBroadcastedBeaconsInfo(beaconInfo: beaconInfo!)
+                        
+                        let accuracy = String(format: "%.2f", beacon.accuracy)
+                        delegate?.BeaconEstimatedDistance(UUID: beacon.proximityUUID.uuidString, Major: beacon.major.stringValue, Minor: beacon.minor.stringValue, distance: accuracy)
+                    }
+                }
+            }
+        }
+    }
+    
+    /*func validateBeaconWithMacList(UUID: String, Major: String, Minor: String) {
         
         let beaconList = EywaSDKWifiMacList.SharedManager
         
@@ -294,7 +317,7 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
                 }
             }
         }
-    }
+    }*/
     
     //CHECK WHETHER DETECTED CLOSEST BEACON IS AVAILABLE IN PRE-DEFINED LIST OR NOT
     
