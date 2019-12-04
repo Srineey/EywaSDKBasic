@@ -13,13 +13,7 @@ import CoreLocation
 public protocol BeaconReceiverDelegate {
     
     func ClosestBroadcastedBeaconInfo(beaconName: String)
-//    func AllBroadcastedBeaconsInfo(beaconInfo: Dictionary<String, Any>)
-    func BeaconEstimatedDistance(beaconInfo: Dictionary<String, Any>, beaconDistance: CLBeacon)
-}
-
-public protocol BeaconStatusUpdateDelegate {
-    
-    func beaconStatusUpdate(status: String)
+    func AllBroadcastedBeaconsInfo(beaconInfo: Dictionary<String, Any>)
 }
 
 public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
@@ -284,9 +278,7 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
                     
                     if beaconInfo!["Name"] != nil {
                         
-//                        delegate?.AllBroadcastedBeaconsInfo(beaconInfo: beaconInfo!)
-                        
-                        delegate?.BeaconEstimatedDistance(beaconInfo: beaconInfo!, beaconDistance: self.detectedBeacon!)
+                        delegate?.AllBroadcastedBeaconsInfo(beaconInfo: beaconInfo!)
                     }
                 }
             }
