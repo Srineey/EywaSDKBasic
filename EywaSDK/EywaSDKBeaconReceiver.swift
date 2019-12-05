@@ -12,7 +12,7 @@ import CoreLocation
 
 public protocol BeaconReceiverDelegate {
     
-    func ClosestBroadcastedBeaconInfo(beaconName: String)
+    func ClosestBroadcastedBeaconInfo(beaconInfo: Dictionary<String, Any>)
     func AllBroadcastedBeaconsInfo(beaconInfo: Dictionary<String, Any>)
 }
 
@@ -201,7 +201,7 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
             
             //            print("ClosestBeacon is \(String(describing: closestBeacon?.minor.stringValue))")
             
-            validateClosestBeaconWithMacList(UUID: (closestBeacon?.proximityUUID.uuidString)!, Major: (closestBeacon?.major.stringValue)!, Minor: (closestBeacon?.minor.stringValue)!)
+            validateClosestBeaconWithMacList(beacon: closestBeacon!)
         }
     }
     
@@ -314,8 +314,36 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
     }*/
     
     //CHECK WHETHER DETECTED CLOSEST BEACON IS AVAILABLE IN PRE-DEFINED LIST OR NOT
-    
-    func validateClosestBeaconWithMacList(UUID: String, Major: String, Minor: String) {
+
+    func validateClosestBeaconWithMacList(beacon : CLBeacon) {
+        
+        let beaconList = EywaSDKWifiMacList.SharedManager
+        
+        let beaconListArray = beaconList.beanconList()
+        
+        let predicate = NSPredicate(format: "UUID like %@ AND Major like %@ AND Minor like %@",beacon.proximityUUID.uuidString,beacon.major.stringValue,beacon.minor.stringValue);
+        let filteredArray = beaconListArray.filter { predicate.evaluate(with: $0) };
+        
+        if filteredArray.count != 0 {
+            
+            for item in filteredArray {
+                
+                //                print("Beacon \(item)")
+                
+                let beaconInfo = item as? Dictionary<String, Any>
+                
+                if beaconInfo?.keys.count != 0 {
+                    
+                    if beaconInfo!["Name"] != nil {
+                        
+                        delegate?.ClosestBroadcastedBeaconInfo(beaconInfo: beaconInfo!)
+                    }
+                }
+            }
+        }
+    }
+        
+    /*func validateClosestBeaconWithMacList(UUID: String, Major: String, Minor: String) {
         
         let beaconList = EywaSDKWifiMacList.SharedManager
         
@@ -341,5 +369,5 @@ public class EywaSDKBeaconReceiver: NSObject, CLLocationManagerDelegate {
                 }
             }
         }
-    }
+    }*/
 }
